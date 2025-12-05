@@ -17,7 +17,7 @@ This script is designed with the thought of being deployed on the same PVE as th
 > **Note:**  Make sure that the VM will ask for DHCP when presented with a new network device.
 I tested all my VMs by adding a new network device and see if it got a new ip address from DHCP.  
 I use static IP addresses on all my server and I solved it with this (netplan);  
-enp6s2 have static ip, but when a new network device being presented aka RestoreNet it will ask for DHCP.
+enp6s2 have static ip, but when a new network device being presented aka restorenet it will ask for DHCP.
 ```
     enp6s2:
       match:
