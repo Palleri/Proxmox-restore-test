@@ -69,9 +69,10 @@ Modify the variables at the top of the script:
 
 
 
-## Make sure to config your VLAN and DHCP scope
-This script uses the subnet `192.168.123.0/24` with the range of `192.168.123.200-250`
+# ⚠️Make sure to configure your VLAN and DHCP scope before continuing
+This script uses as of right now the subnet `192.168.123.0/24` with the range of `192.168.123.200-250`
 Make sure to change this to your liking.
+The `VLAN_NET` should be without the last octet ex `192.168.111`
 ```
 VLAN_NET="192.168.123"               # /24 network for VLAN
 IP_RANGE_START=200                   # Ping sweep from 200
