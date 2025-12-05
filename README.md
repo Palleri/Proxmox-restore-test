@@ -25,7 +25,7 @@ enp6s2 have static ip, but when a new network device being presented aka Restore
       set-name: {REDACTED}
       addresses:
       - 10.10.10.10/24
-    RestoreNet:
+    restorenet:
       match:
         macaddress: 6A:3F:9C:12:8B:EF //This is the mac address being used by the script
       dhcp4: true
