@@ -10,6 +10,7 @@ This script is designed with the thought of being deployed on the same PVE as th
 * mail
 * VLAN setup with DHCP enabled that specific VLAN
 * The restored VM needs to be able to get DHCP from the new network device being added.
+* Ping has to work from PVE to the restored VM
 
 > You could use this with static ip addresses but then you would have to stop the orginal VM before running the restore script, otherwise it would lead to ip conflicts. 
 
