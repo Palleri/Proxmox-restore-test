@@ -263,13 +263,19 @@ restore_vm() {
     echo "=============================="
 
     # --- Cleanup VM ---
-    echo "Cleaning up VM $new_vmid"
-    qm stop $new_vmid &>/dev/null
-    sleep 60
-    qm destroy $new_vmid
-
-    echo "Restore/test completed for VMID $source_vmid -> new VMID $new_vmid [$status]"
-    echo "=============================="
+    qm stop $new_vmid
+    echo "Waiting for VM $new_vmid to stop..."
+    while true; do
+        status=$(qm status $new_vmid 2>/dev/null | awk '{print $2}')
+        if [[ "$status" == "stopped" ]]; then
+            echo "VM $new_vmid has stopped. Destroying..."
+            qm destroy $new_vmid
+            break
+        else
+            echo "VM $new_vmid still running... checking again in 5 seconds."
+            sleep 5
+        fi
+done
 
 }
 
@@ -281,5 +287,6 @@ for vmid in "${SOURCE_VMS[@]}"; do
 done
 
 echo "All restores completed!"
+
 ```
 
