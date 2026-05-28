@@ -1,5 +1,8 @@
 # Proxmox VM Restore & Test Automation Script
 
+# ⚠️ BE AWARE THERE IS FORK OF THIS REPO THAT CONTAINS A BACKDOOR
+
+
 This Bash script automates restoring Proxmox VMs from PBS backups, testing basic network functionality, and automatically cleaning up the restored VM. It is ideal for backup verification, disaster-recovery validation, and automated integrity testing.
 This script is designed with the thought of being deployed on the same PVE as the restored VM. Thats why I am removing the Network, USB and PCI devices.
 
